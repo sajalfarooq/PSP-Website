@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIEAS Society For Physics</title>
+
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+     body {
+    background-color: #0f172a;
+    color: white;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: #020617;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Desktop nav */
+nav {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* Hamburger hidden on desktop */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #38bdf8;
+    color: black;
+}
+
+.btn-secondary {
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+}
+
+.btn-primary:hover {
+    background: #0ea5e9;
+}
+
+.btn-secondary:hover {
+    background: #38bdf8;
+    color: black;
+}
+
+/* ================= MOBILE DESIGN ================= */
+
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide nav by default */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #020617;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .logo img {
+        width: 30px;
+        height: 30px;
+
+    }
+     nav.active {
+        display: flex;
+    }
+
+}
+    </style>
+      
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.jpeg" alt="Logo">
+        PIEAS Society For Physics
+    </div>
+
+    <!-- Hamburger icon -->
+    <div class= "menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+    <nav id="nav-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Events</a>
+        <a href="#">Resources</a>
+        <a href="#">More</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>EXPLORING THE FUNDAMENTAL LAWS OF THE UNIVERSE</h1>
+
+    <p>
+        Join our community of passionate physics students and explore
+        the mysteries of science together.
+    </p>
+
+    <div class="buttons">
+        <a href="#" class="btn-primary">Join Society</a>
+        <a href="#" class="btn-secondary">Explore Events</a>
+    </div>
+</section>
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-menu");
+
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
+</script>
+</body>
+</html>
